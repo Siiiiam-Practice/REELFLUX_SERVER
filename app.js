@@ -21,6 +21,7 @@ const NoRoutes_1 = __importDefault(require("./util/NoRoutes"));
 const Main_routes_1 = __importDefault(require("./routes/Main.routes"));
 const filters_1 = require("telegraf/filters");
 const telegraf_1 = require("telegraf");
+require("dotenv/config");
 const app = (0, express_1.default)();
 exports.bot = new telegraf_1.Telegraf(process.env.BOT_TOKEN);
 exports.bot === null || exports.bot === void 0 ? void 0 : exports.bot.on((0, filters_1.message)("text"), (ctx) => ctx.replyWithPhoto('https://i.ibb.co.com/nbPbnMv/image.png', {
@@ -33,7 +34,7 @@ exports.bot === null || exports.bot === void 0 ? void 0 : exports.bot.on((0, fil
 Start farming today and stay tuned for exciting surprises! 🚀`,
     reply_markup: {
         inline_keyboard: [
-            [{ text: "Open App", url: "https://t.me/Agecoin_bot/app" }]
+            [{ text: "Open App", url: process.env.TMA_LINK }]
         ]
     }
 }));
@@ -81,9 +82,9 @@ app.post("/api/bot", (req, res) => __awaiter(void 0, void 0, void 0, function* (
 }));
 app.get("/manifest", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.send({
-        "url": "https://age.coin",
-        "name": "Agecoin",
-        "iconUrl": "https://i.ibb.co.com/sjv5Rfr/IMG-20240923-WA0003.jpg"
+        "url": "https://Reel.Flux",
+        "name": "REEL FLEX",
+        "iconUrl": "https://i.ibb.co.com/ssfJBcr/logo-3.png"
     });
 }));
 app.use(NoRoutes_1.default);
